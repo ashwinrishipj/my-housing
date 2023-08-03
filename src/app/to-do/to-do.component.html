@@ -1,0 +1,14 @@
+<p> {{name}}</p>
+
+<button (click)="buttonClick()" width="2px" height="2px" > click me </button>
+<label> enter your name: </label><input type="text" [(ngModel)]="inputText" />
+
+<p> you typed: {{inputText}} </p>
+<p> button status:
+{{buttonStatus}}
+</p>
+
+<p> Todo: </p>
+<div *ngFor="let data of toDoMap.values()">
+    <p> {{data.name}} <button (click) ="removeId(data.id)"> X </button> </p>
+</div>
