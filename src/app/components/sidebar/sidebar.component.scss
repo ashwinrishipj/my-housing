@@ -1,0 +1,25 @@
+.sidebar-margin{
+    padding: 0px;
+    margin-left: -15px;
+}
+
+.icon-flex{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    max-height: 50vh;
+}
+
+.icon{
+    font-size: x-large;
+    color: rgb(110, 111, 114);   
+    margin-top: 20px;
+}
+
+.icon:hover{
+    color: rgb(57, 98, 222);
+}
+
+.icon::after{
+    color: rgb(57, 98, 222);
+}
