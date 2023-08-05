@@ -1,8 +1,8 @@
 <div class="col-lg-10 vh-100 sidebar-margin">
     <div class="icon-flex">
-        <div class="icon"><i class="fas fa-home"></i> </div>
-        <div class="icon"><i class="fas fa-university"></i> </div>
-        <div class="icon"><i class="fas fa-cog"></i> </div>
-        <div class="icon"><i class="fas fa-sign-out-alt"></i></div>
+        <div class="icon" (click)="toggleIconColor('home')" routerLink="/home" [class.active]="activeIcon === 'home'"><i class="fas fa-home"></i></div>
+        <div class="icon" (click)="toggleIconColor('university')" routerLink="/bank" [class.active]="activeIcon === 'university'"><i class="fas fa-university"></i></div>
+        <div class="icon" (click)="toggleIconColor('cog')" routerLink="/settings" [class.active]="activeIcon === 'cog'"><i class="fas fa-cog"></i></div>
+        <div class="icon" (click)="toggleIconColor('sign-out-alt')" routerLink="/home" [class.active]="activeIcon === 'sign-out-alt'"><i class="fas fa-sign-out-alt"></i></div>        
     </div>
 </div>

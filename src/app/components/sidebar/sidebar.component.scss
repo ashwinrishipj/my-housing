@@ -16,10 +16,6 @@
     margin-top: 20px;
 }
 
-.icon:hover{
-    color: rgb(57, 98, 222);
-}
-
-.icon::after{
+.icon:hover, .icon.active{
     color: rgb(57, 98, 222);
 }
