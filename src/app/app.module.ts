@@ -8,6 +8,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MortgageComponent } from './components/mortgage/mortgage.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CustomRouteReuseStrategy } from './route-reuse-strategy';
+import { RouteReuseStrategy } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +18,17 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     DashboardComponent,
     MortgageComponent,
     SettingsComponent,
-    SidebarComponent
+    SidebarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: CustomRouteReuseStrategy } // Provide the custom strategy
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
