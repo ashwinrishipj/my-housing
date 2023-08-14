@@ -11,5 +11,4 @@ export class SidebarComponent {
   toggleIconColor(iconName: string) {
     this.activeIcon = (this.activeIcon !== iconName) ? iconName : this.activeIcon;
   }
-
 }
