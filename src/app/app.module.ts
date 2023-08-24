@@ -11,6 +11,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CustomRouteReuseStrategy } from './route-reuse-strategy';
 import { RouteReuseStrategy } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './components/home/home.component';
     MortgageComponent,
     SettingsComponent,
     SidebarComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
