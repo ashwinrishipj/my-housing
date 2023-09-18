@@ -1,14 +1,5 @@
 import { Component } from '@angular/core';
-import { DotenvParseOutput } from 'dotenv';
-
-declare var process: {
-  env: DotenvParseOutput;
-};
-
-export const environment = {
-  production: false,
-  googleMapsApiKey: process.env['GOOGLE_MAPS_API_KEY'],
-};
+import { FetchAddressService } from 'src/app/services/fetch-address.service';
 
 @Component({
   selector: 'app-home',
@@ -18,22 +9,18 @@ export const environment = {
 
 export class HomeComponent {
   address: string = '';
-  approximateAddress: string = '';
+  approximateAddress: string | undefined;
 
-  lookupAddress() {
-    const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${this.address}&key=${environment.googleMapsApiKey}`;
+  constructor(private fetchAddressService: FetchAddressService){}
 
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.results && data.results.length > 0) {
-          this.approximateAddress = data.results[0].formatted_address;
-        } else {
-          this.approximateAddress = 'Address not found';
-        }
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
+  getAddress(){
+    this.fetchAddressService.lookupAddress(this.address).subscribe(
+      (result) =>{
+        this.approximateAddress = result;
+      },
+      (error) =>{
+        this.approximateAddress = "address not found";
+      }
+    )
   }
 }

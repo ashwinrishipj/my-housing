@@ -1,11 +1,10 @@
 <div class="row">
   <div class="card bg-white min-vh-100">
-    <form (ngSubmit)="lookupAddress()">
-      <div class="row">
-        <input type="text" class="form-control" placeholder="Enter address or zipcode" [(ngModel)]="address">
-        <button type="submit" class="btn btn-primary">Lookup Address</button>
+      <div class="row mt-4">
+        <div class="col-lg-6">
+            <input type="text" class="form-control no-outline" placeholder="Enter address or zipcode" /> 
+          
+        </div>
       </div>
-    </form>
-    <p>Approximate Address: {{ approximateAddress }}</p>
   </div>
 </div>
